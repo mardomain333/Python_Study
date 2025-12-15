@@ -73,6 +73,29 @@ def delete_atindex(head,n):
             prev=prev.next
             count+=1
     prev.next=curr.next
+def deleteduplicate(head):
+    #ith just duplicate ondel delete cheyan olla code ann
+    ptr=head
+    ptrpre=head
+    duplicate_checklist=[]
+    duplicates_list=[]
+    while(ptr.next!=None):
+        if ptr==head:
+            duplicate_checklist.append(int(ptr.value))
+            ptr=ptr.next
+        else:
+            if int(ptr.value) not in duplicate_checklist:
+                duplicate_checklist.append(int(ptr.value))
+                ptr=ptr.next
+                ptrpre=ptrpre.next
+            else:
+                duplicates_list.append(int(ptr.value))
+                ptrpre.next=ptr.next
+                ptr=ptr.next
+    if ptr.value in duplicate_checklist:
+        ptrpre.next=None
+               
+    print("Duplicates deleted .....",duplicates_list)
 try:   
     print("=====LINKED LIST PROGRAM=====")
     if input("\ndo u want to create a linked list(yes/no)")=='y':
@@ -126,6 +149,9 @@ try:
                     n=int(input("enter the index"))
                     delete_atindex(head,n)
                     print(f"Element deleted at index{n}")
+                    display_ll(head)
+                case 8:
+                    deleteduplicate(head)
                     display_ll(head)
                 case 0:
                     print("Existing.....")
