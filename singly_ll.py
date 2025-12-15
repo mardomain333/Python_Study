@@ -5,6 +5,7 @@ class node:
 
 def display_ll(head):
     curr=head
+    print()
     if curr.next==None:
         print(curr.value)
     else:
@@ -15,6 +16,7 @@ def display_ll(head):
             string=string+f'{curr.value}->'
             curr=curr.next
         print(string)
+    print()
           
         
 def add_atbeg(head):
@@ -95,7 +97,19 @@ def deleteduplicate(head):
     if ptr.value in duplicate_checklist:
         ptrpre.next=None
                
-    print("Duplicates deleted .....",duplicates_list)
+    print(f"Duplicates deleted .....{duplicates_list}" if len(duplicates_list)!=0 else "NO duplicates")
+def find_middle(head):
+    fastptr=head
+    slowptr=head
+    while(fastptr.next!=None):
+        fastptr=fastptr.next 
+        fastptr=fastptr.next
+        slowptr=slowptr.next
+    print(f"middle value= {slowptr.value}") #fast ptr +2 vech increment cheymbol 
+                                           #slow ptr normal ayit +1 vech increment chym 
+                                           #so fast and end ethumbol slow middle ayirikum
+
+        
 try:   
     print("=====LINKED LIST PROGRAM=====")
     if input("\ndo u want to create a linked list(yes/no)")=='y':
@@ -105,7 +119,7 @@ try:
         flag1=int(input("\ndo u want another option(1/0)"))
         while flag1!=0:
             print("===linked list options===")
-            n=int(input("1>Display\n2>Add element at beg\n3>add element at end\n4>delete at begining\n5>delete at end\n6>enter at index\n7>remove at index\n0>exit\n"))
+            n=int(input("1>Display\n2>Add element at beg\n3>add element at end\n4>delete at begining\n5>delete at end\n6>enter at index\n7>remove at index\n8>delete_duplicate\n9>find middle element\n0>exit\n"))
             match n:
                 case 1:
                     display_ll(head)
@@ -153,6 +167,8 @@ try:
                 case 8:
                     deleteduplicate(head)
                     display_ll(head)
+                case 9:
+                    find_middle(head)
                 case 0:
                     print("Existing.....")
                     break
