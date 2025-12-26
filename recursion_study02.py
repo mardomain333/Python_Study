@@ -23,7 +23,7 @@ def find_sum(n):
         return 1                                #ivide backtracking cheyanne return cheyth
     else:
         return n+find_sum(n-1)
-print(f"sum using functional={find_sum(5)}")
+print(f"sum using recursion={find_sum(5)}")
 
 
 """
@@ -40,7 +40,7 @@ print(f"factorial of {n}= {fact(n)}")
 
 
 """
-now i going to just reverse a list using recursion
+Now i going to just reverse a list using recursion
 
 """
 arr=[1,2,3,4,5]
