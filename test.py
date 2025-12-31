@@ -1,8 +1,11 @@
-n=5
-def fib(n,i):
- 
+n=10
+def fib(n):
+    if n<=1:
+       return n
     else:
-      return fib(n)+fib(n+1)
+      return fib(n-1)+fib(n-2)
+print(fib(n))
     
+
     
     

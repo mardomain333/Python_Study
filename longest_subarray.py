@@ -1,7 +1,7 @@
 
-l=[9,4,20,3,10,5,-1]
-l=[5,2,2,1,1,1,1,4]
-target=6
+
+l=[15,-2,2,-8,1,7,10]
+target=0
 
 #here we have to find the max length of  substring that will have the sum of target
 #in the given list [2,2] [1,1,1,1] [4] these substrings have the sum of 4 
@@ -27,8 +27,10 @@ for a in l:
         minvalue=cono if maxvalue > cono else minvalue
         print(l[di[dono]+1:count+1])
         counter+=1
-    di[prefixsum]=count
+    else:
+      di[prefixsum]=count
    
 print(f"max lenght={maxvalue}")
 print(f"min length={minvalue}")
 print(f"no of sublist={counter}")
+print(di)
