@@ -109,7 +109,25 @@ def find_middle(head):
                                            #slow ptr normal ayit +1 vech increment chym 
                                            #so fast and end ethumbol slow middle ayirikum
 
+def reverse(head):
+    currnode=head
+    nextnode=head.next
+    nextnextnode=head.next.next
+    currnode.next=None
+    while nextnextnode.next!=None:
+        nextnode.next=currnode
+        currnode=nextnode
+        nextnode=nextnextnode
+        nextnextnode=nextnextnode.next
+    nextnode.next=currnode
+    currnode=nextnode
+    nextnode=nextnextnode
+    nextnode.next=currnode
+    
+    
+    return nextnode
         
+
 try:   
     print("=====LINKED LIST PROGRAM=====")
     if input("\ndo u want to create a linked list(yes/no)")=='y':
@@ -169,11 +187,14 @@ try:
                     display_ll(head)
                 case 9:
                     find_middle(head)
+                case 10:
+                    head=reverse(head)
+                    display_ll(head)
                 case 0:
                     print("Existing.....")
                     break
 except:
-    print(">>>>>><<<<< Something went wrong !!!>>>><<<<<")
+    print()
                 
 
        
