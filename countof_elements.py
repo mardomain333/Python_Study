@@ -1,5 +1,9 @@
 
+from collections import Counter
+
 n=[1,2,6,3,3,4,9,8,4,7,9,2,3,8,4,7]
+dic=dict(Counter(n))
+print(dic)
 hash_freq={}
 hash_frequ={}
 for a in n:
